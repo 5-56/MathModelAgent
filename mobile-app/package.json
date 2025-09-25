@@ -1,7 +1,7 @@
 {
   "name": "MathModelAgent-Mobile",
   "version": "1.0.0",
-  "description": "Mobile agent application for mathematical modeling with Termux integration",
+  "description": "Mobile agent application for mathematical modeling with local AI and Termux integration",
   "main": "index.js",
   "scripts": {
     "android": "react-native run-android",
@@ -10,7 +10,10 @@
     "test": "jest",
     "lint": "eslint .",
     "build-android": "cd android && ./gradlew assembleRelease",
-    "build-apk": "cd android && ./gradlew assembleRelease && cp app/build/outputs/apk/release/app-release.apk ../MathModelAgent-Mobile.apk"
+    "build-apk": "cd android && ./gradlew assembleRelease && cp app/build/outputs/apk/release/app-release.apk ../MathModelAgent-Mobile.apk",
+    "setup": "./scripts/setup.sh",
+    "build": "./scripts/build.sh",
+    "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
     "react": "18.2.0",
@@ -39,7 +42,8 @@
     "react-native-svg": "^14.1.0",
     "react-native-chart-kit": "^6.12.0",
     "react-native-terminal": "^0.1.0",
-    "react-native-xterm": "^1.0.0"
+    "react-native-xterm": "^1.0.0",
+    "onnxruntime-react-native": "^1.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -60,5 +64,25 @@
   },
   "engines": {
     "node": ">=16"
-  }
+  },
+  "keywords": [
+    "react-native",
+    "mobile",
+    "ai",
+    "mathematical-modeling",
+    "local-llm",
+    "termux",
+    "python",
+    "machine-learning"
+  ],
+  "author": "MathModel Agent Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/MathModelAgent-Mobile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/MathModelAgent-Mobile/issues"
+  },
+  "homepage": "https://github.com/your-org/MathModelAgent-Mobile#readme"
 }

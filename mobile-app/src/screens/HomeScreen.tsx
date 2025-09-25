@@ -10,31 +10,45 @@ const HomeScreen: React.FC = () => {
 
   const features = [
     {
-      title: '智能对话',
-      description: '与AI智能体进行数学建模对话',
-      icon: 'chat',
+      title: '本地AI对话',
+      description: '使用本地模型进行数学建模对话',
+      icon: 'robot',
       color: '#6366f1',
-      onPress: () => navigation.navigate('Chat' as never),
+      onPress: () => navigation.navigate('LocalChat' as never),
     },
     {
-      title: '任务管理',
-      description: '查看和管理建模任务进度',
-      icon: 'clipboard-list',
+      title: '模型管理',
+      description: '下载和管理本地AI模型',
+      icon: 'brain',
       color: '#8b5cf6',
-      onPress: () => navigation.navigate('Task' as never),
+      onPress: () => navigation.navigate('ModelManager' as never),
+    },
+    {
+      title: '云端对话',
+      description: '连接云端AI服务进行对话',
+      icon: 'cloud',
+      color: '#06b6d4',
+      onPress: () => navigation.navigate('Chat' as never),
     },
     {
       title: 'Termux终端',
       description: '内置终端环境，执行Python代码',
       icon: 'terminal',
-      color: '#06b6d4',
+      color: '#10b981',
       onPress: () => navigation.navigate('Terminal' as never),
+    },
+    {
+      title: '任务管理',
+      description: '查看和管理建模任务进度',
+      icon: 'clipboard-list',
+      color: '#f59e0b',
+      onPress: () => navigation.navigate('Task' as never),
     },
     {
       title: '文件管理',
       description: '管理项目文件和结果',
       icon: 'folder',
-      color: '#10b981',
+      color: '#ef4444',
       onPress: () => navigation.navigate('FileManager' as never),
     },
   ];
@@ -46,8 +60,8 @@ const HomeScreen: React.FC = () => {
           <Card.Content>
             <Title style={styles.welcomeTitle}>欢迎使用 MathModel Agent</Title>
             <Paragraph style={styles.welcomeText}>
-              专为数学建模设计的移动端智能体应用，集成Termux终端环境，
-              让您随时随地完成数学建模任务。
+              专为数学建模设计的移动端智能体应用，支持本地AI模型和Termux终端环境，
+              让您随时随地完成数学建模任务，无需网络连接。
             </Paragraph>
           </Card.Content>
         </Card>
@@ -81,6 +95,12 @@ const HomeScreen: React.FC = () => {
           <Card.Content>
             <Title>系统状态</Title>
             <View style={styles.statusRow}>
+              <Paragraph>本地AI模型: </Paragraph>
+              <Button mode="outlined" compact>
+                未加载
+              </Button>
+            </View>
+            <View style={styles.statusRow}>
               <Paragraph>Termux环境: </Paragraph>
               <Button mode="outlined" compact>
                 已连接
@@ -93,9 +113,9 @@ const HomeScreen: React.FC = () => {
               </Button>
             </View>
             <View style={styles.statusRow}>
-              <Paragraph>后端服务: </Paragraph>
+              <Paragraph>运行模式: </Paragraph>
               <Button mode="outlined" compact>
-                在线
+                本地模式
               </Button>
             </View>
           </Card.Content>
@@ -103,10 +123,10 @@ const HomeScreen: React.FC = () => {
       </ScrollView>
 
       <FAB
-        icon="plus"
+        icon="robot"
         style={styles.fab}
-        onPress={() => navigation.navigate('Chat' as never)}
-        label="新建任务"
+        onPress={() => navigation.navigate('LocalChat' as never)}
+        label="开始对话"
       />
     </View>
   );

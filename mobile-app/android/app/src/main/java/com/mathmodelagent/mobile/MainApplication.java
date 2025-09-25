@@ -27,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Add custom packages here
           packages.add(new TermuxPackage());
+          packages.add(new ONNXPackage());
           return packages;
         }
 

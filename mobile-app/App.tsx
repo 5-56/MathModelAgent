@@ -8,6 +8,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 // Screens
 import HomeScreen from './src/screens/HomeScreen';
 import ChatScreen from './src/screens/ChatScreen';
+import LocalChatScreen from './src/screens/LocalChatScreen';
+import ModelManagerScreen from './src/screens/ModelManagerScreen';
 import TaskScreen from './src/screens/TaskScreen';
 import TerminalScreen from './src/screens/TerminalScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
@@ -46,7 +48,17 @@ const App: React.FC = () => {
             <Stack.Screen 
               name="Chat" 
               component={ChatScreen} 
-              options={{ title: '智能对话' }}
+              options={{ title: '云端对话' }}
+            />
+            <Stack.Screen 
+              name="LocalChat" 
+              component={LocalChatScreen} 
+              options={{ title: '本地AI对话' }}
+            />
+            <Stack.Screen 
+              name="ModelManager" 
+              component={ModelManagerScreen} 
+              options={{ title: '模型管理' }}
             />
             <Stack.Screen 
               name="Task" 
